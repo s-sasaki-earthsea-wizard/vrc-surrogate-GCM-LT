@@ -421,10 +421,3 @@ AIはとても賢くて便利だけど、万能ではない。
 従来はスーパーコンピュータが必要だった天気予報が、今やワンコインで試せる時代になったんですね。スタバやコメダにコーヒーを飲みにいくのを1回我慢して天気予報で遊んでみるのも楽しいと思いますよ！
 
 それでは、また次の動画まで、ごきげんよう！
-
----
-
-## 参考資料
-
-- [FourCastNet 3 - NVIDIA Technical Blog](https://developer.nvidia.com/blog/fourcastnet-3-enables-fast-and-accurate-large-ensemble-weather-forecasting-with-scalable-geometric-ml/)
-- [GraphCast - Google DeepMind](https://deepmind.google/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/)

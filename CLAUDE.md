@@ -65,3 +65,9 @@
 
 Co-Authored-By: Claude <noreply@anthropic.com>
 ```
+
+## 追加ガイドライン
+
+タスク固有の詳細なガイドラインは `instructions/` ディレクトリを参照してください：
+
+- [YouTube動画脚本 TTS変換ガイドライン](./instructions/youtube_script_guidelines.md) - 脚本をTTS向けに最適化する際の指針

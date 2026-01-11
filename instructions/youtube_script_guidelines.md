@@ -75,26 +75,137 @@ AIが予測した結果を見てみましょう。
 
 ### 3.2 Audio Tags（Eleven v3用）
 
-v3モデルでは角括弧 `[]` でタグを挿入できます：
+v3モデルでは角括弧 `[]` でタグを挿入できます。**重要：以下は代表的な例であり、ElevenLabsは非常に柔軟にさまざまなタグを解釈できます。脚本の文脈に合わせて、自由にタグを創造・組み合わせてください。**
 
-#### 感情タグ
+#### タグの基本原則
+
+1. **柔軟性を活かす**: 下記の例にとらわれず、表現したい感情・状況を英語で記述すればOK
+2. **組み合わせ可能**: `[hesitant][nervous]` のように複数タグを重ねられる
+3. **自然言語で指定**: `[speaking slowly with growing concern]` のような説明的タグも有効
+4. **文脈に応じて創造**: 必要な表現がリストになければ、自分で作成してよい
+
+#### 感情・ムード（Mood/Emotion）
+
+代表例：
 | タグ | 効果 |
 |------|------|
 | `[excited]` | 興奮、ワクワク |
-| `[curious]` | 好奇心、疑問 |
+| `[nervous]` | 緊張、不安 |
+| `[calm]` | 落ち着いた |
+| `[frustrated]` | イライラ、苛立ち |
+| `[sorrowful]` | 悲しみ、哀愁 |
+| `[curious]` | 好奇心 |
 | `[surprised]` | 驚き |
-| `[sad]` | 悲しみ |
-| `[sarcastic]` | 皮肉っぽく |
+| `[nostalgic]` | 懐かしさ |
+| `[confident]` | 自信に満ちた |
+| `[hopeful]` | 希望に満ちた |
+| `[melancholic]` | 物悲しい |
+| `[energetic]` | 元気いっぱい |
 
-#### 発話スタイルタグ
+**応用例**: `[slightly worried]`, `[growing excitement]`, `[bittersweet]`, `[cautiously optimistic]`
+
+#### トーン・スタイル（Tone/Style）
+
+代表例：
 | タグ | 効果 |
 |------|------|
-| `[whispers]` | ささやき |
+| `[cheerfully]` | 明るく |
+| `[deadpan]` | 無表情、淡々と |
+| `[playfully]` | 遊び心を込めて |
+| `[seriously]` | 真剣に |
+| `[warmly]` | 温かく |
+| `[flatly]` | 平坦に |
+| `[dramatically]` | ドラマチックに |
+| `[casually]` | カジュアルに |
+| `[matter-of-factly]` | 事実を述べるように |
+| `[conversational tone]` | 会話調で |
+
+**応用例**: `[friendly tone]`, `[professional tone]`, `[intimate whisper]`, `[theatrical]`
+
+#### リアクション・ボーカルエフェクト（Reactions/Vocal Effects）
+
+代表例：
+| タグ | 効果 |
+|------|------|
 | `[laughs]` | 笑い |
 | `[sighs]` | ため息 |
+| `[gasps]` | 息を呑む |
+| `[gulps]` | ゴクリと飲み込む |
+| `[whispers]` | ささやき |
 | `[clears throat]` | 咳払い |
+| `[soft chuckle]` | 小さく笑う |
+| `[yawns]` | あくび |
+| `[coughs]` | 咳 |
+| `[sniffles]` | 鼻をすする |
+
+**応用例**: `[nervous laugh]`, `[relieved sigh]`, `[sharp intake of breath]`, `[suppressed giggle]`
+
+#### リズム・ペース（Rhythm/Pacing）
+
+代表例：
+| タグ | 効果 |
+|------|------|
+| `[pauses]` | 間を置く |
+| `[hesitates]` | ためらう |
+| `[stammers]` | どもる |
+| `[rushed]` | 急いで |
+| `[slowly]` | ゆっくり |
+| `[drawn out]` | 引き延ばして |
+| `[dramatic pause]` | 劇的な間 |
+| `[building intensity]` | 徐々に強く |
+
+**応用例**: `[speaking faster with excitement]`, `[trailing off]`, `[picking up pace]`
+
+#### ナレーション・語り（Narrative）
+
+代表例：
+| タグ | 効果 |
+|------|------|
+| `[voice-over style]` | ナレーション調 |
+| `[inner monologue]` | 内なる声 |
+| `[storytelling mode]` | 物語を語るように |
+| `[announcing]` | アナウンス調 |
+| `[documentary style]` | ドキュメンタリー風 |
+| `[tutorial tone]` | チュートリアル調 |
+
+#### ユーモア（Humor）
+
+代表例：
+| タグ | 効果 |
+|------|------|
+| `[sarcastic]` | 皮肉っぽく |
+| `[teasing]` | からかうように |
+| `[ironic]` | 皮肉を込めて |
+| `[self-deprecating]` | 自虐的に |
+| `[dad joke tone]` | 親父ギャグ風 |
+| `[dry humor]` | 乾いたユーモア |
+
+#### 内省的（Introspective）
+
+代表例：
+| タグ | 効果 |
+|------|------|
+| `[vulnerable tone]` | 弱さを見せて |
+| `[heartfelt]` | 心からの |
+| `[reflective]` | 内省的に |
+| `[contemplative]` | 熟考するように |
+| `[wistful]` | もの思いにふけって |
+
+#### 効果音（Sound Effects）
+
+代表例：
+| タグ | 効果 |
+|------|------|
+| `[applause]` | 拍手 |
+| `[door creaking]` | ドアのきしみ |
+| `[thunder]` | 雷 |
+| `[typing sounds]` | タイピング音 |
+
+**注意**: 効果音タグは状況により効果が不安定な場合があります。
 
 #### 使用例
+
+**基本的な使用:**
 ```
 [excited] みなさん、これ見てください！
 
@@ -102,6 +213,41 @@ v3モデルでは角括弧 `[]` でタグを挿入できます：
 
 [laughs] 実は私も最初は信じられませんでした。
 ```
+
+**タグの組み合わせ:**
+```
+[hesitant][nervous] えーと…これ、本当に大丈夫なんでしょうか。
+
+[whispering][conspiratorial] 実は、ここだけの話なんですが…
+
+[excited][rushed] すごいすごい！見てください、ここ！
+```
+
+**説明的なタグ:**
+```
+[speaking slowly with emphasis] これが、最も重要なポイントです。
+
+[growing excitement] そして結果は…なんと…予想を超えてきました！
+
+[as if sharing a secret] 実はね、この方法、あまり知られてないんです。
+```
+
+**文脈に応じた創造的なタグ:**
+```
+[like explaining to a friend] 簡単に言うとね、こういうことなんです。
+
+[building suspense] さて、結果は…どうなったでしょうか…
+
+[relieved laugh] ふう、やっと動きました。
+```
+
+#### タグ活用のベストプラクティス
+
+1. **過剰使用を避ける**: すべての文にタグを付ける必要はない
+2. **重要な箇所に集中**: 感情の転換点や強調したい部分で使用
+3. **自然さを優先**: タグによる演出より、テキスト自体の自然さが重要
+4. **テスト必須**: 新しいタグは必ず音声生成してテストする
+5. **組み合わせは2-3個まで**: タグを重ねすぎると予測不能になる
 
 ### 3.3 大文字による強調
 

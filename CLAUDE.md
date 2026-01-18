@@ -18,6 +18,21 @@
 - 定数: UPPER_SNAKE_CASE
 - Docstring: Google Style
 
+### Manim（アニメーション作成）
+
+- **MathTexで日本語を使用しない**: `MathTex`はLaTeXを使用するため、デフォルトでは日本語フォントがサポートされていない。日本語を含む数式表現には`Text`オブジェクトを使用すること。
+
+```python
+# NG: LaTeXエラーになる
+MathTex(r"5000\text{万} \times 10000\text{ステップ}")
+
+# OK: Textオブジェクトを使用
+Text("5000万点 × 10000ステップ", font_size=32)
+```
+
+- 純粋な数式（記号・数字のみ）は`MathTex`を使用可能
+- 日本語の説明文や単位は`Text`オブジェクトで表示し、`VGroup`で組み合わせる
+
 ## Git運用
 
 - ブランチ戦略: feature/*, fix/*, refactor/*

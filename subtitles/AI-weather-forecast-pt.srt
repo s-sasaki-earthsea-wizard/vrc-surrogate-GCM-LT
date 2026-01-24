@@ -1,0 +1,829 @@
+1
+00:00:00,033 --> 00:00:01,266
+Olha isso!
+
+2
+00:00:01,533 --> 00:00:07,400
+Eu fiz cálculos de previsão do tempo
+usando o modelo de IA mais recente!
+
+3
+00:00:07,733 --> 00:00:12,133
+E a previsão do tempo com IA pode ser calculada em apenas alguns minutos!
+
+4
+00:00:12,733 --> 00:00:18,666
+Comparado com a previsão numérica tradicional,
+é muito mais rápido e mais barato de calcular!
+
+5
+00:00:19,133 --> 00:00:25,333
+Eu mesmo experimentei,
+e custou apenas cerca de 500 ienes!
+
+6
+00:00:25,466 --> 00:00:32,933
+É surpreendente que você possa fazer previsão do tempo
+por menos que um café ou um combo do McDonald's
+
+7
+00:00:33,466 --> 00:00:39,866
+Hoje vou apresentar a ciência da previsão do tempo
+e a tecnologia mais recente de IA para previsão meteorológica
+
+8
+00:00:42,633 --> 00:00:48,266
+Vocês sabem como as previsões do tempo diárias
+são realmente criadas?
+
+9
+00:00:48,766 --> 00:00:52,633
+Na verdade, isso envolve cálculos incrivelmente complexos
+
+10
+00:00:53,033 --> 00:01:02,466
+Toda a atmosfera e água da Terra, fluxo de ar, temperatura, pressão,
+e como as nuvens e o vapor d'água mudam
+
+11
+00:01:02,566 --> 00:01:06,066
+são simulados com base em equações físicas
+
+12
+00:01:06,666 --> 00:01:16,300
+Resolver equações de dinâmica dos fluidos e termodinâmica em escala global requer cálculos extremamente complexos e intrincados
+
+13
+00:01:16,833 --> 00:01:20,733
+Quando você tenta executar esses cálculos em um computador,
+
+14
+00:01:20,733 --> 00:01:29,266
+leva várias horas para produzir uma previsão de 10 dias usando um supercomputador composto por centenas de máquinas
+
+15
+00:01:29,833 --> 00:01:32,600
+É tão intensivo computacionalmente assim
+
+16
+00:01:33,033 --> 00:01:37,866
+Para empresas comuns ou indivíduos fazerem o mesmo seria quase impossível...
+
+17
+00:01:38,266 --> 00:01:40,266
+Isso era no passado
+
+18
+00:01:41,033 --> 00:01:49,600
+Como demonstrei, agora a previsão do tempo pode ser feita pelo custo de uma xícara de café
+
+19
+00:01:50,500 --> 00:01:56,266
+O que mudou drasticamente a situação nos últimos anos foi o avanço da tecnologia de IA
+
+20
+00:01:57,100 --> 00:02:07,933
+Modelos de IA para previsão do tempo surgiram, e uma previsão de 10 dias pode ser calculada em apenas 1 minuto com uma única GPU de alto desempenho
+
+21
+00:02:08,866 --> 00:02:12,800
+O que costumava levar centenas de máquinas e várias horas, agora leva uma GPU e um minuto
+
+22
+00:02:13,700 --> 00:02:15,300
+É surpreendentemente rápido, não é?
+
+23
+00:02:16,433 --> 00:02:23,033
+E a boa notícia é que alguns desses modelos pré-treinados
+estão disponíveis publicamente
+
+24
+00:02:23,433 --> 00:02:29,866
+Se você alugar uma GPU de alto desempenho na nuvem,
+até indivíduos podem executá-los facilmente
+
+25
+00:02:30,500 --> 00:02:33,433
+Antes de falar sobre previsão do tempo com IA,
+
+26
+00:02:33,900 --> 00:02:37,433
+vamos primeiro ver mais de perto como as previsões tradicionais são feitas
+
+27
+00:02:37,733 --> 00:02:40,033
+Vamos examinar isso em mais detalhes
+
+28
+00:02:40,400 --> 00:02:46,333
+O ar se move, a temperatura muda, o vapor d'água vira nuvens e chove
+
+29
+00:02:47,000 --> 00:02:51,500
+Esses fenômenos são conhecidos por serem descritos por
+
+30
+00:02:52,066 --> 00:02:56,233
+várias equações diferenciais, incluindo dinâmica dos fluidos e termodinâmica
+
+31
+00:02:57,000 --> 00:03:01,766
+Você pode pensar "então é só resolver essas equações"
+
+32
+00:03:02,100 --> 00:03:08,633
+Infelizmente, essas equações são muito complexas
+para resolver com papel e lápis
+
+33
+00:03:09,300 --> 00:03:13,133
+Diferente das equações quadráticas que aprendemos no ensino médio, não há fórmula
+
+34
+00:03:13,466 --> 00:03:17,900
+então não dá para obter uma resposta na forma de "x é igual a tanto"
+
+35
+00:03:18,533 --> 00:03:22,400
+É aí que entram os métodos numéricos
+
+36
+00:03:23,533 --> 00:03:27,733
+Talvez seja mais fácil pensar nisso como simulação
+
+37
+00:03:28,233 --> 00:03:35,566
+No cálculo numérico, aproximamos conectando
+pontos em uma curva com linhas
+
+38
+00:03:36,033 --> 00:03:41,733
+Não é a resposta exata, mas a ideia é
+chegar o mais perto possível do valor correto
+
+39
+00:03:42,900 --> 00:03:48,033
+Deixe-me explicar brevemente o que o cálculo numérico faz
+
+40
+00:03:48,300 --> 00:03:50,500
+Primeiro, definimos um ponto inicial
+
+41
+00:03:51,233 --> 00:03:55,633
+Digamos que quando x é 0, f(x) é igual a 1
+
+42
+00:03:56,366 --> 00:04:02,666
+Então calculamos o valor um pouco adiante,
+quando x é 0,1
+
+43
+00:04:03,000 --> 00:04:09,433
+A equação diferencial nos diz a inclinação,
+então avançamos um pouco seguindo essa inclinação
+
+44
+00:04:10,000 --> 00:04:15,266
+Então calculamos o próximo ponto, quando x é 0,2
+
+45
+00:04:15,900 --> 00:04:20,900
+Repetindo esse processo,
+a forma da função gradualmente se revela
+
+46
+00:04:21,600 --> 00:04:28,266
+Um desses métodos passo a passo
+é chamado de "método de Runge-Kutta"
+
+47
+00:04:28,666 --> 00:04:32,533
+A pergunta importante aqui é "quão finamente dividimos os passos?"
+
+48
+00:04:34,200 --> 00:04:37,866
+No exemplo anterior, calculamos em incrementos de 0,1
+
+49
+00:04:38,300 --> 00:04:46,700
+Se quiser mais precisão,
+precisa tornar mais fino: 0,01, 0,001, e assim por diante
+
+50
+00:04:47,166 --> 00:04:53,466
+Mas se diminuir o passo em 10 vezes,
+o número de cálculos aumenta 10 vezes
+
+51
+00:04:54,000 --> 00:05:00,300
+O problema importante é que quanto mais fina a divisão,
+mais os custos computacionais explodem
+
+52
+00:05:01,100 --> 00:05:05,333
+A previsão do tempo requer simular a Terra inteira
+
+53
+00:05:05,900 --> 00:05:10,033
+O exemplo anterior era unidimensional, mas a atmosfera real é tridimensional
+
+54
+00:05:10,833 --> 00:05:16,000
+O espaço se estende nas direções leste-oeste, norte-sul e altitude
+
+55
+00:05:16,500 --> 00:05:18,100
+E ainda se adiciona o tempo
+
+56
+00:05:19,033 --> 00:05:25,933
+Por exemplo, dividir a Terra em uma grade de 25x25 km
+resulta em cerca de 1 milhão de pontos
+
+57
+00:05:26,366 --> 00:05:29,500
+Mais dezenas de camadas na direção da altitude
+
+58
+00:05:30,000 --> 00:05:34,900
+E o tempo também é dividido finamente e avançado passo a passo
+
+59
+00:05:35,300 --> 00:05:44,700
+Então, 100 cálculos em uma dimensão
+explodem exponencialmente em três dimensões mais tempo
+
+60
+00:05:45,366 --> 00:05:49,800
+Nesse ponto, computadores normais não conseguem mais lidar
+
+61
+00:05:50,600 --> 00:05:55,366
+É por isso que a previsão do tempo requer supercomputadores
+
+62
+00:05:56,266 --> 00:06:01,633
+Por isso a previsão do tempo de ponta
+se torna um empreendimento de escala nacional
+
+63
+00:06:02,633 --> 00:06:10,433
+Mas então surgiu o tema principal de hoje:
+uma abordagem completamente nova usando IA
+
+64
+00:06:10,900 --> 00:06:15,133
+Resumidamente, isto é o que o aprendizado de máquina faz
+
+65
+00:06:15,733 --> 00:06:18,233
+Primeiro, prepare uma grande quantidade de dados
+
+66
+00:06:18,800 --> 00:06:23,866
+Use esses dados para prever qual saída vem de uma entrada
+
+67
+00:06:24,400 --> 00:06:32,266
+Calcule o quanto a previsão difere da resposta correta,
+e ajuste o modelo para reduzir essa diferença
+
+68
+00:06:32,733 --> 00:06:39,366
+Repetindo isso muitas e muitas vezes,
+as previsões gradualmente se aproximam das respostas corretas
+
+69
+00:06:39,733 --> 00:06:49,066
+Em vez de humanos dizerem "calcule usando essas regras",
+a máquina encontra padrões nos dados por conta própria
+
+70
+00:06:49,533 --> 00:06:53,833
+Este é o conceito básico do aprendizado de máquina
+
+71
+00:06:53,966 --> 00:06:56,500
+Vamos ver um exemplo extremamente simples
+
+72
+00:06:56,833 --> 00:07:02,666
+Eu criei um modelo de IA para prever
+a trajetória parabólica de uma bola lançada
+
+73
+00:07:03,100 --> 00:07:08,900
+Os dados de treinamento são trajetórias
+de várias velocidades iniciais e ângulos
+
+74
+00:07:09,433 --> 00:07:13,233
+Foram simplesmente gerados usando cálculos de função quadrática
+
+75
+00:07:13,733 --> 00:07:16,033
+Quando você treina o modelo com esses dados,
+
+76
+00:07:16,833 --> 00:07:23,033
+ele pode prever trajetórias
+apenas inserindo a velocidade inicial e o ângulo de lançamento
+
+77
+00:07:24,000 --> 00:07:26,500
+Aqui está o resultado de executá-lo de verdade
+
+78
+00:07:27,300 --> 00:07:31,466
+Prevê o movimento parabólico com bastante precisão, não é?
+
+79
+00:07:32,133 --> 00:07:36,500
+O interessante é que este modelo não conhece a equação quadrática
+
+80
+00:07:37,500 --> 00:07:43,000
+Mas vendo muitos dados sobre
+"lançado assim, voou assim"
+
+81
+00:07:43,333 --> 00:07:48,200
+ele aprende os padrões
+e se torna capaz de prever trajetórias precisas
+
+82
+00:07:49,000 --> 00:07:54,000
+Isso é parecido com quando jogamos lixo na lixeira
+
+83
+00:07:54,400 --> 00:07:57,933
+Sem pensar em fórmulas de física, pela experiência
+
+84
+00:07:58,400 --> 00:08:03,533
+simplesmente sabemos "com essa força e esse ângulo, vai entrar"
+
+85
+00:08:04,333 --> 00:08:09,733
+Não é muito educado, então por favor
+descarte o lixo corretamente sem jogar
+
+86
+00:08:10,833 --> 00:08:12,566
+Mas honestamente,
+
+87
+00:08:12,933 --> 00:08:19,566
+usar aprendizado de máquina para prever
+movimento parabólico, francamente, não tem vantagem
+
+88
+00:08:20,600 --> 00:08:25,100
+Porque você pode obter a resposta imediatamente resolvendo uma equação quadrática
+
+89
+00:08:26,366 --> 00:08:31,700
+Mas este exemplo simples de fazer um modelo de IA prever movimento parabólico
+
+90
+00:08:32,200 --> 00:08:37,633
+leva à previsão de fenômenos físicos complexos
+como a previsão do tempo
+
+91
+00:08:38,466 --> 00:08:44,533
+Uma característica dos modelos de aprendizado de máquina é que os custos de treinamento e previsão são muito diferentes
+
+92
+00:08:45,400 --> 00:08:51,700
+Treinamento, a etapa de aprender padrões dos dados,
+é realmente intensivo
+
+93
+00:08:52,633 --> 00:09:01,133
+Lendo dados de observação meteorológica e previsões numéricas de décadas,
+treinando milhares, dezenas de milhares de vezes
+
+94
+00:09:01,766 --> 00:09:07,700
+Mas uma vez que o treinamento está completo e o modelo está construído,
+a previsão é quase instantânea
+
+95
+00:09:08,333 --> 00:09:16,266
+Insira o estado atmosférico atual,
+e com base nos padrões aprendidos, sai o estado 6 horas depois
+
+96
+00:09:17,033 --> 00:09:24,366
+Não precisa avançar um pouco, calcular de novo,
+e acumular pequenos passos como no cálculo numérico
+
+97
+00:09:25,200 --> 00:09:29,600
+O método tradicional calcula do zero toda vez
+
+98
+00:09:30,200 --> 00:09:36,300
+Montar equações físicas, fazer cálculo numérico,
+acumular passo a passo de forma constante
+
+99
+00:09:36,800 --> 00:09:42,133
+O modelo de IA é como ter resolvido muitas provas antigas
+e entendido os padrões
+
+100
+00:09:42,766 --> 00:09:45,600
+Para provas, em vez de memorizar princípios detalhados,
+
+101
+00:09:45,933 --> 00:09:51,400
+simplesmente memorizar como resolver questões anteriores
+é de fato um método eficaz
+
+102
+00:09:52,033 --> 00:09:59,400
+"Ok, é rápido, mas e a precisão?"
+Esta é uma pergunta natural que surge
+
+103
+00:10:00,133 --> 00:10:05,100
+Na verdade, os modelos de IA mais recentes alcançam precisão igual à previsão numérica tradicional
+
+104
+00:10:05,700 --> 00:10:09,700
+e em alguns casos, até melhor
+
+105
+00:10:10,433 --> 00:10:14,133
+Por exemplo, o Furacão Lee em 2023
+
+106
+00:10:14,633 --> 00:10:23,200
+Um grande furacão que se formou no Atlântico e
+causou danos significativos nas costas atlânticas dos EUA e Canadá
+
+107
+00:10:23,666 --> 00:10:26,400
+Onde esse furacão tocaria terra?
+
+108
+00:10:27,233 --> 00:10:33,566
+O modelo de IA desenvolvido pelo Google DeepMind
+previu com precisão com 9 dias de antecedência
+
+109
+00:10:34,333 --> 00:10:42,066
+A previsão tradicional só teve certeza com 6 dias de antecedência,
+então alertas puderam ser emitidos 3 dias antes
+
+110
+00:10:42,866 --> 00:10:48,133
+"Se a IA é tão rápida, ainda precisamos de supercomputadores?"
+
+111
+00:10:48,533 --> 00:10:52,400
+Alguns podem pensar assim,
+mas na verdade não é bem assim
+
+112
+00:10:53,133 --> 00:10:55,700
+Os dados que os modelos de IA usam para aprender,
+
+113
+00:10:56,333 --> 00:10:58,500
+de onde eles vêm?
+
+114
+00:10:59,333 --> 00:11:02,500
+Da previsão numérica do tempo tradicional
+
+115
+00:11:03,233 --> 00:11:05,833
+Coletando dados de observação meteorológica de todo o mundo,
+
+116
+00:11:06,366 --> 00:11:09,633
+simulações físicas calculadas por supercomputadores,
+
+117
+00:11:10,100 --> 00:11:16,300
+os modelos de IA aprendem com dados que reconstroem
+como era a atmosfera no passado
+
+118
+00:11:17,233 --> 00:11:25,433
+Em outras palavras, os modelos de IA não substituem a simulação física,
+eles aprendem com seus resultados
+
+119
+00:11:26,000 --> 00:11:31,066
+Modelos de IA sozinhos não podem produzir previsões do tempo altamente precisas
+
+120
+00:11:31,633 --> 00:11:37,100
+Até agora expliquei como funciona a previsão do tempo com IA
+
+121
+00:11:37,733 --> 00:11:43,966
+Mas você não consegue realmente acreditar
+até tentar você mesmo, certo?
+
+122
+00:11:44,533 --> 00:11:47,133
+Então vamos fazer isso!
+
+123
+00:11:47,733 --> 00:11:55,466
+Desta vez estou usando o FourCastNet,
+um modelo de IA para previsão do tempo lançado pela NVIDIA
+
+124
+00:11:56,133 --> 00:12:02,666
+O modelo pré-treinado está disponível gratuitamente,
+e qualquer um pode baixar e usar
+
+125
+00:12:03,366 --> 00:12:07,533
+No entanto, você precisa de uma GPU de alto desempenho para executá-lo
+
+126
+00:12:08,400 --> 00:12:12,500
+GPUs de PC comum não são potentes o suficiente
+
+127
+00:12:12,833 --> 00:12:19,766
+Então desta vez aluguei GPUs na nuvem
+por hora de um serviço chamado RunPod
+
+128
+00:12:20,300 --> 00:12:23,766
+Aluguei uma GPU A100
+
+129
+00:12:24,466 --> 00:12:28,433
+A taxa por hora é cerca de 1,5 dólares
+
+130
+00:12:28,933 --> 00:12:32,400
+Cerca de 235 ienes em moeda japonesa
+
+131
+00:12:33,300 --> 00:12:38,600
+Usar a GPU H100 mais recente seria mais rápido,
+
+132
+00:12:39,200 --> 00:12:46,800
+mas custa 2,7 dólares por hora,
+então considerando o equilíbrio de custos, escolhi a A100
+
+133
+00:12:47,333 --> 00:12:55,000
+Para entrada, usei dados de observação meteorológica global
+publicados gratuitamente pela NOAA, a agência meteorológica dos EUA
+
+134
+00:12:55,300 --> 00:13:04,200
+Baixei dados reais de 1º de janeiro de 2025 às 00:00 UTC
+e usei como dados de entrada
+
+135
+00:13:04,933 --> 00:13:12,700
+A partir daí, decidi prever 60 horas à frente,
+até 12:00 do dia 3 de janeiro, em intervalos de 6 horas
+
+136
+00:13:13,500 --> 00:13:18,833
+A inferência para a previsão do tempo de 3 dias
+levou cerca de 35 minutos
+
+137
+00:13:19,433 --> 00:13:27,400
+Incluindo configuração do ambiente, download de dados meteorológicos e carregamento do modelo, o custo total foi cerca de 3 dólares
+
+138
+00:13:28,000 --> 00:13:29,333
+Menos de 500 ienes
+
+139
+00:13:29,966 --> 00:13:32,700
+Previsão do tempo por menos de uma moeda!
+
+140
+00:13:33,766 --> 00:13:39,466
+Vamos ver os resultados
+Este é o tempo previsto pela IA
+
+141
+00:13:40,233 --> 00:13:51,233
+Temperatura da superfície, velocidade do vento, pressão ao nível do mar, padrões de pressão atmosférica superior,
+foi possível prever como vários elementos meteorológicos mudam a cada 6 horas
+
+142
+00:13:51,833 --> 00:13:56,366
+Esse tipo de cálculo agora é possível com orçamento pessoal,
+por menos de 500 ienes
+
+143
+00:13:56,833 --> 00:13:59,966
+Isso era impensável há apenas 5 anos
+
+144
+00:14:00,266 --> 00:14:10,233
+No entanto, desta vez não verifiquei rigorosamente
+se a previsão correspondia ao tempo real de 1 a 3 de janeiro de 2025
+
+145
+00:14:11,300 --> 00:14:17,733
+Considere isso apenas uma demonstração
+de executar um modelo de IA e obter resultados de previsão
+
+146
+00:14:18,333 --> 00:14:26,033
+Ainda assim, o que há alguns anos exigia
+recursos computacionais de projeto nacional com supercomputadores,
+
+147
+00:14:26,466 --> 00:14:29,733
+agora pode ser feito pelo custo de uma xícara de café
+
+148
+00:14:30,266 --> 00:14:33,066
+Acho isso verdadeiramente revolucionário
+
+149
+00:14:34,000 --> 00:14:39,500
+Quando aluguei a GPU no RunPod
+para fazer este vídeo,
+
+150
+00:14:39,766 --> 00:14:43,500
+pensei que mesmo se o resultado fosse
+"Gastei 10 dólares e não consegui nada!"
+
+151
+00:14:43,866 --> 00:14:45,600
+esse tipo de resultado
+
+152
+00:14:45,866 --> 00:14:50,966
+também seria um bom conteúdo,
+o que também seria legal
+
+153
+00:14:51,600 --> 00:14:53,633
+Mas funcionou mais facilmente do que esperava
+
+154
+00:14:54,000 --> 00:14:58,233
+Então decidi enfatizar
+"menos de 500 ienes"
+
+155
+00:14:58,933 --> 00:15:03,266
+Isso também é um bom conteúdo, então tudo deu certo
+
+156
+00:15:03,800 --> 00:15:11,233
+Além do modelo da NVIDIA que usei,
+pesquisas de previsão do tempo com IA estão avançando no mundo todo
+
+157
+00:15:11,766 --> 00:15:13,166
+GraphCast do Google
+
+158
+00:15:13,833 --> 00:15:15,466
+Aurora da Microsoft
+
+159
+00:15:16,233 --> 00:15:18,100
+Pangu-Weather da Huawei
+
+160
+00:15:18,400 --> 00:15:22,733
+E AIFS do Centro Europeu de Previsões Meteorológicas de Médio Prazo
+
+161
+00:15:23,500 --> 00:15:29,833
+Não apenas grandes empresas de TI,
+mas agências meteorológicas tradicionais também estão adotando IA
+
+162
+00:15:30,333 --> 00:15:38,033
+Além disso, em vez de substituir tudo por IA,
+várias abordagens híbridas estão surgindo
+
+163
+00:15:38,700 --> 00:15:41,733
+Por exemplo, na previsão numérica tradicional,
+
+164
+00:15:42,033 --> 00:15:45,833
+substituir apenas as partes computacionalmente pesadas por IA
+
+165
+00:15:46,566 --> 00:15:49,866
+ou melhorar a precisão dos dados de observação com IA
+
+166
+00:15:50,600 --> 00:15:54,233
+ou corrigir resultados de previsões numéricas com IA
+
+167
+00:15:55,100 --> 00:16:01,666
+Pesquisas combinando o melhor da IA
+e da previsão numérica tradicional estão avançando em várias direções
+
+168
+00:16:02,266 --> 00:16:06,833
+Mas como vocês sabem, IA não é onipotente
+
+169
+00:16:07,966 --> 00:16:13,100
+Grandes modelos de linguagem como o ChatGPT
+às vezes contam mentiras plausíveis
+
+170
+00:16:13,600 --> 00:16:17,966
+IA de geração de imagens desenha pessoas comendo ramen com as mãos
+
+171
+00:16:18,900 --> 00:16:23,633
+Vocês sabem bem que IA faz coisas estranhas
+
+172
+00:16:24,566 --> 00:16:28,800
+IA é muito inteligente e útil, mas não é onipotente
+
+173
+00:16:29,466 --> 00:16:31,966
+IA para previsão do tempo é a mesma coisa
+
+174
+00:16:33,033 --> 00:16:38,366
+Por isso precisamos pensar em como incorporar tecnologia de IA na pesquisa científica
+
+175
+00:16:38,933 --> 00:16:41,166
+Pesquisadores e engenheiros ao redor do mundo,
+
+176
+00:16:41,633 --> 00:16:47,933
+e nós que usamos os resultados de suas pesquisas,
+precisamos pensar sobre isso
+
+177
+00:16:49,000 --> 00:16:58,000
+IA para previsão do tempo é um exemplo particularmente importante
+que está intimamente conectado com nossas vidas diárias
+
+178
+00:16:58,700 --> 00:17:00,866
+Só uma observação no final
+
+179
+00:17:01,833 --> 00:17:07,833
+No Japão, você precisa de permissão da Agência Meteorológica do Japão
+para fazer previsão do tempo como negócio
+
+180
+00:17:08,500 --> 00:17:12,900
+Se você está apenas experimentando como eu fiz desta vez, tudo bem
+
+181
+00:17:13,366 --> 00:17:18,533
+Mas se começar um negócio usando isso,
+pode estar violando a lei
+
+182
+00:17:19,500 --> 00:17:23,400
+Por favor, aproveite isso apenas para fins de pesquisa e aprendizado
+
+183
+00:17:26,500 --> 00:17:31,633
+Hoje dei uma breve explicação sobre previsão do tempo numérica e com IA
+
+184
+00:17:32,200 --> 00:17:36,800
+E realmente executei um modelo de IA para previsão do tempo
+
+185
+00:17:37,533 --> 00:17:40,500
+Previsão do tempo que costumava exigir supercomputadores,
+
+186
+00:17:41,033 --> 00:17:45,233
+agora pode ser facilmente experimentada por qualquer um por menos de 500 ienes
+
+187
+00:17:46,233 --> 00:17:54,366
+Em vez de ir ao café tomar um café uma vez,
+pode ser divertido brincar com previsão do tempo
+
+188
+00:17:55,033 --> 00:17:58,766
+Até o próximo vídeo, passe bem!

@@ -1,0 +1,829 @@
+1
+00:00:00,033 --> 00:00:01,266
+Check this out!
+
+2
+00:00:01,533 --> 00:00:07,400
+I actually ran weather forecast calculations
+using the latest AI weather prediction model!
+
+3
+00:00:07,733 --> 00:00:12,133
+And AI-based weather forecasting can be computed in just a few minutes!
+
+4
+00:00:12,733 --> 00:00:18,666
+Compared to traditional numerical weather prediction,
+it's much faster and cheaper to compute!
+
+5
+00:00:19,133 --> 00:00:25,333
+I actually tried it myself,
+and it only cost about 500 yen!
+
+6
+00:00:25,466 --> 00:00:32,933
+It's surprising that you can do weather forecasting
+for less than a cup of coffee or a McDonald's combo meal
+
+7
+00:00:33,466 --> 00:00:39,866
+Today I'll introduce the science of weather forecasting
+and the latest AI weather prediction technology
+
+8
+00:00:42,633 --> 00:00:48,266
+Do you know how daily weather forecasts
+are actually created?
+
+9
+00:00:48,766 --> 00:00:52,633
+It actually involves incredibly complex calculations
+
+10
+00:00:53,033 --> 00:01:02,466
+The entire Earth's atmosphere and water, air flow, temperature, pressure,
+and how clouds and water vapor change over time
+
+11
+00:01:02,566 --> 00:01:06,066
+are simulated based on physics equations
+
+12
+00:01:06,666 --> 00:01:16,300
+Solving fluid dynamics and thermodynamics equations on a global scale requires extremely complex and intricate calculations
+
+13
+00:01:16,833 --> 00:01:20,733
+When you try to run these calculations on a computer,
+
+14
+00:01:20,733 --> 00:01:29,266
+it takes several hours to produce a 10-day forecast using a supercomputer made up of hundreds of machines
+
+15
+00:01:29,833 --> 00:01:32,600
+That's how computationally intensive it is
+
+16
+00:01:33,033 --> 00:01:37,866
+It would be nearly impossible for ordinary companies or individuals to do the same...
+
+17
+00:01:38,266 --> 00:01:40,266
+That was the story until recently
+
+18
+00:01:41,033 --> 00:01:49,600
+As I actually demonstrated, weather forecasting is now becoming possible for about the cost of a cup of coffee
+
+19
+00:01:50,500 --> 00:01:56,266
+What dramatically changed the situation in recent years is the advancement of AI technology
+
+20
+00:01:57,100 --> 00:02:07,933
+AI-based weather prediction models have emerged, and a 10-day forecast can be computed in just 1 minute using a single high-performance GPU
+
+21
+00:02:08,866 --> 00:02:12,800
+What used to take hundreds of machines and several hours now takes one GPU and one minute
+
+22
+00:02:13,700 --> 00:02:15,300
+It's surprisingly fast, isn't it?
+
+23
+00:02:16,433 --> 00:02:23,033
+And the good news is that some of these pre-trained models
+are publicly available
+
+24
+00:02:23,433 --> 00:02:29,866
+If you rent a high-performance GPU in the cloud,
+even individuals can easily run them
+
+25
+00:02:30,500 --> 00:02:33,433
+Before talking about AI weather forecasting,
+
+26
+00:02:33,900 --> 00:02:37,433
+let's first take a closer look at how traditional weather forecasts are made
+
+27
+00:02:37,733 --> 00:02:40,033
+Let's examine this in more detail
+
+28
+00:02:40,400 --> 00:02:46,333
+Air moves, temperature changes, water vapor becomes clouds and rain falls
+
+29
+00:02:47,000 --> 00:02:51,500
+These phenomena are known to be describable by
+
+30
+00:02:52,066 --> 00:02:56,233
+various differential equations including fluid dynamics and thermodynamics
+
+31
+00:02:57,000 --> 00:03:01,766
+You might think "well, just solve those equations then"
+
+32
+00:03:02,100 --> 00:03:08,633
+Unfortunately, these equations are too complex
+to solve with paper and pencil
+
+33
+00:03:09,300 --> 00:03:13,133
+Unlike the quadratic equations you learn in high school, there's no formula
+
+34
+00:03:13,466 --> 00:03:17,900
+so you can't get an answer in the form of "x equals something"
+
+35
+00:03:18,533 --> 00:03:22,400
+This is where numerical calculation comes in
+
+36
+00:03:23,533 --> 00:03:27,733
+You might find it easier to think of it as simulation
+
+37
+00:03:28,233 --> 00:03:35,566
+In numerical calculation, we approximate by
+connecting points on a curve with lines
+
+38
+00:03:36,033 --> 00:03:41,733
+It's not the exact answer, but the idea is
+to get as close to the correct value as possible
+
+39
+00:03:42,900 --> 00:03:48,033
+Let me briefly explain what numerical calculation does
+
+40
+00:03:48,300 --> 00:03:50,500
+First, we set a starting point
+
+41
+00:03:51,233 --> 00:03:55,633
+Let's say when x is 0, f(x) equals 1
+
+42
+00:03:56,366 --> 00:04:02,666
+Then we calculate the value just a little ahead,
+when x is 0.1
+
+43
+00:04:03,000 --> 00:04:09,433
+The differential equation tells us the slope,
+so we move forward a bit following that slope
+
+44
+00:04:10,000 --> 00:04:15,266
+Then we calculate the next point, when x is 0.2
+
+45
+00:04:15,900 --> 00:04:20,900
+By repeating this process,
+the shape of the function gradually becomes visible
+
+46
+00:04:21,600 --> 00:04:28,266
+One of these step-by-step methods
+is called the "Runge-Kutta method"
+
+47
+00:04:28,666 --> 00:04:32,533
+The important question here is "how finely do we divide the steps?"
+
+48
+00:04:34,200 --> 00:04:37,866
+In the earlier example, we calculated in 0.1 increments
+
+49
+00:04:38,300 --> 00:04:46,700
+If you want more precision,
+you need to make it finer: 0.01, 0.001, and so on
+
+50
+00:04:47,166 --> 00:04:53,466
+But if you make the steps 10 times smaller,
+the number of calculations increases 10 times
+
+51
+00:04:54,000 --> 00:05:00,300
+The important issue is that making divisions finer
+causes computational costs to explode
+
+52
+00:05:01,100 --> 00:05:05,333
+Weather forecasting requires simulating the entire Earth
+
+53
+00:05:05,900 --> 00:05:10,033
+The earlier example was 1-dimensional, but the real atmosphere is 3-dimensional
+
+54
+00:05:10,833 --> 00:05:16,000
+Space extends in east-west, north-south, and altitude directions
+
+55
+00:05:16,500 --> 00:05:18,100
+And time is added on top of that
+
+56
+00:05:19,033 --> 00:05:25,933
+For example, dividing the Earth into 25km square grids
+results in about 1 million points
+
+57
+00:05:26,366 --> 00:05:29,500
+Plus dozens of layers in the altitude direction
+
+58
+00:05:30,000 --> 00:05:34,900
+And time is also divided finely and advanced step by step
+
+59
+00:05:35,300 --> 00:05:44,700
+So what was 100 calculations in 1-dimension
+explodes exponentially in 3-dimensions plus time
+
+60
+00:05:45,366 --> 00:05:49,800
+At this point, regular computers can no longer handle it
+
+61
+00:05:50,600 --> 00:05:55,366
+This is why weather forecasting requires supercomputers
+
+62
+00:05:56,266 --> 00:06:01,633
+That's why cutting-edge weather forecasting
+becomes a national-project-level endeavor
+
+63
+00:06:02,633 --> 00:06:10,433
+But then came today's main topic:
+a completely new approach using AI
+
+64
+00:06:10,900 --> 00:06:15,133
+Here's roughly what machine learning does
+
+65
+00:06:15,733 --> 00:06:18,233
+First, prepare a large amount of data
+
+66
+00:06:18,800 --> 00:06:23,866
+Use that data to predict what output comes from an input
+
+67
+00:06:24,400 --> 00:06:32,266
+Calculate how much the prediction differs from the correct answer,
+and adjust the model to reduce that difference
+
+68
+00:06:32,733 --> 00:06:39,366
+By repeating this many, many times,
+predictions gradually get closer to the correct answers
+
+69
+00:06:39,733 --> 00:06:49,066
+Instead of humans saying "calculate using these rules,"
+the machine finds patterns from the data on its own
+
+70
+00:06:49,533 --> 00:06:53,833
+This is the basic concept of machine learning
+
+71
+00:06:53,966 --> 00:06:56,500
+Let's look at an extremely simple example
+
+72
+00:06:56,833 --> 00:07:02,666
+I created an AI model that predicts
+the parabolic trajectory of a thrown ball
+
+73
+00:07:03,100 --> 00:07:08,900
+The training data consists of trajectories
+from various initial velocities and angles
+
+74
+00:07:09,433 --> 00:07:13,233
+They were simply generated using quadratic function calculations
+
+75
+00:07:13,733 --> 00:07:16,033
+When you train the model with this data,
+
+76
+00:07:16,833 --> 00:07:23,033
+it can predict trajectories
+just by inputting the initial velocity and launch angle
+
+77
+00:07:24,000 --> 00:07:26,500
+Here's the result of actually running it
+
+78
+00:07:27,300 --> 00:07:31,466
+It predicts the projectile motion quite accurately, doesn't it?
+
+79
+00:07:32,133 --> 00:07:36,500
+The interesting thing is that this model doesn't know the quadratic equation
+
+80
+00:07:37,500 --> 00:07:43,000
+But by seeing lots of data about
+"when thrown this way, it flew like that"
+
+81
+00:07:43,333 --> 00:07:48,200
+it learns the patterns
+and becomes able to predict accurate trajectories
+
+82
+00:07:49,000 --> 00:07:54,000
+This is similar to when we throw trash into a trash can
+
+83
+00:07:54,400 --> 00:07:57,933
+Without thinking about physics formulas, through experience
+
+84
+00:07:58,400 --> 00:08:03,533
+we just know "if I throw with this much force at this angle, it'll go in"
+
+85
+00:08:04,333 --> 00:08:09,733
+It's not good manners though, so please make sure
+to properly dispose of your trash without throwing it
+
+86
+00:08:10,833 --> 00:08:12,566
+To be honest though,
+
+87
+00:08:12,933 --> 00:08:19,566
+there's frankly no advantage
+to using machine learning for predicting projectile motion
+
+88
+00:08:20,600 --> 00:08:25,100
+Because you can get the answer immediately by solving a quadratic equation
+
+89
+00:08:26,366 --> 00:08:31,700
+But this simple example of having an AI model predict projectile motion
+
+90
+00:08:32,200 --> 00:08:37,633
+leads to predicting complex physical phenomena
+like weather forecasting
+
+91
+00:08:38,466 --> 00:08:44,533
+A key feature of machine learning models is that training and prediction costs differ greatly
+
+92
+00:08:45,400 --> 00:08:51,700
+Training, the stage of learning patterns from data,
+is indeed intensive
+
+93
+00:08:52,633 --> 00:09:01,133
+Reading in decades of meteorological observation data and numerical forecast data,
+and training thousands, tens of thousands of times
+
+94
+00:09:01,766 --> 00:09:07,700
+But once training is complete and the model is built,
+prediction is nearly instantaneous
+
+95
+00:09:08,333 --> 00:09:16,266
+When you input the current atmospheric state,
+it outputs the state 6 hours later based on learned patterns
+
+96
+00:09:17,033 --> 00:09:24,366
+There's no need to advance a little, calculate again,
+and accumulate small steps like numerical calculation
+
+97
+00:09:25,200 --> 00:09:29,600
+The traditional method calculates from scratch every time
+
+98
+00:09:30,200 --> 00:09:36,300
+Set up physics equations, do numerical calculation,
+and steadily accumulate step by step
+
+99
+00:09:36,800 --> 00:09:42,133
+The AI model is like having solved many past exams
+and grasped the patterns
+
+100
+00:09:42,766 --> 00:09:45,600
+For tests, rather than memorizing detailed principles,
+
+101
+00:09:45,933 --> 00:09:51,400
+just memorizing how to solve past problems
+is indeed an effective method
+
+102
+00:09:52,033 --> 00:09:59,400
+"Okay it's fast, but what about accuracy?"
+This is a natural question that comes up
+
+103
+00:10:00,133 --> 00:10:05,100
+Actually, the latest AI models achieve accuracy equal to traditional numerical forecasting
+
+104
+00:10:05,700 --> 00:10:09,700
+and in some cases, even better
+
+105
+00:10:10,433 --> 00:10:14,133
+For example, Hurricane Lee in 2023
+
+106
+00:10:14,633 --> 00:10:23,200
+A major hurricane that formed in the Atlantic and
+caused significant damage to the Atlantic coasts of the US and Canada
+
+107
+00:10:23,666 --> 00:10:26,400
+Where would this hurricane make landfall?
+
+108
+00:10:27,233 --> 00:10:33,566
+The AI model developed by Google DeepMind
+accurately predicted it 9 days in advance
+
+109
+00:10:34,333 --> 00:10:42,066
+Traditional forecasting could only be confident 6 days ahead,
+so warnings could be issued 3 days earlier
+
+110
+00:10:42,866 --> 00:10:48,133
+"If AI is this fast, do we even need supercomputers anymore?"
+
+111
+00:10:48,533 --> 00:10:52,400
+Some might think so,
+but that's actually not the case
+
+112
+00:10:53,133 --> 00:10:55,700
+The data that AI models learn from
+
+113
+00:10:56,333 --> 00:10:58,500
+Where does it come from?
+
+114
+00:10:59,333 --> 00:11:02,500
+It comes from traditional numerical weather prediction
+
+115
+00:11:03,233 --> 00:11:05,833
+Gathering meteorological observation data from around the world
+
+116
+00:11:06,366 --> 00:11:09,633
+Physical simulations computed by supercomputers
+
+117
+00:11:10,100 --> 00:11:16,300
+AI models learn from data that recreates
+what the past atmosphere was like
+
+118
+00:11:17,233 --> 00:11:25,433
+In other words, AI models don't replace physical simulation,
+they learn from its results
+
+119
+00:11:26,000 --> 00:11:31,066
+AI models alone cannot produce highly accurate weather forecasts
+
+120
+00:11:31,633 --> 00:11:37,100
+So far I've explained how AI-based weather forecasting works
+
+121
+00:11:37,733 --> 00:11:43,966
+But you can't really believe it
+until you try it yourself, right?
+
+122
+00:11:44,533 --> 00:11:47,133
+So let's actually do it!
+
+123
+00:11:47,733 --> 00:11:55,466
+This time I'm using FourCastNet,
+an AI weather prediction model released by NVIDIA
+
+124
+00:11:56,133 --> 00:12:02,666
+The pre-trained model is freely available
+and anyone can download and use it
+
+125
+00:12:03,366 --> 00:12:07,533
+However, you need a high-performance GPU to run it
+
+126
+00:12:08,400 --> 00:12:12,500
+Regular PC GPUs aren't quite powerful enough
+
+127
+00:12:12,833 --> 00:12:19,766
+So this time I rented cloud-based GPUs
+by the hour from a service called RunPod
+
+128
+00:12:20,300 --> 00:12:23,766
+I rented an A100 GPU
+
+129
+00:12:24,466 --> 00:12:28,433
+The hourly rate is about $1.50
+
+130
+00:12:28,933 --> 00:12:32,400
+That's about 235 yen in Japanese currency
+
+131
+00:12:33,300 --> 00:12:38,600
+Using the latest H100 GPU would be faster,
+
+132
+00:12:39,200 --> 00:12:46,800
+but it costs $2.70 per hour,
+so I chose the A100 considering cost balance
+
+133
+00:12:47,333 --> 00:12:55,000
+For input, I used global meteorological observation data
+freely published by NOAA, the US weather agency
+
+134
+00:12:55,300 --> 00:13:04,200
+I downloaded actual data from January 1, 2025 at 00:00 UTC
+and used it as input data
+
+135
+00:13:04,933 --> 00:13:12,700
+From there, I decided to predict 60 hours ahead,
+until 12:00 on January 3rd, in 6-hour intervals
+
+136
+00:13:13,500 --> 00:13:18,833
+The inference for the 3-day weather forecast
+took about 35 minutes
+
+137
+00:13:19,433 --> 00:13:27,400
+Including environment setup, downloading meteorological data, and loading the model, the total cost was about $3
+
+138
+00:13:28,000 --> 00:13:29,333
+Just under 500 yen
+
+139
+00:13:29,966 --> 00:13:32,700
+I could do weather forecasting for less than a single coin!
+
+140
+00:13:33,766 --> 00:13:39,466
+Let's look at the results
+This is the weather predicted by the AI
+
+141
+00:13:40,233 --> 00:13:51,233
+Surface temperature, wind speed, sea level pressure, upper atmospheric pressure patterns,
+I could predict how various meteorological elements change every 6 hours
+
+142
+00:13:51,833 --> 00:13:56,366
+This kind of calculation is now possible
+from a personal budget, for less than 500 yen
+
+143
+00:13:56,833 --> 00:13:59,966
+This was unthinkable just 5 years ago
+
+144
+00:14:00,266 --> 00:14:10,233
+However, I haven't rigorously verified whether it matched
+the actual weather from January 1-3, 2025
+
+145
+00:14:11,300 --> 00:14:17,733
+Please consider this just a demo
+of running an AI model and getting prediction results
+
+146
+00:14:18,333 --> 00:14:26,033
+Still, what used to require national-project-level
+supercomputer resources just a few years ago
+
+147
+00:14:26,466 --> 00:14:29,733
+can now be done for the cost of a cup of coffee
+
+148
+00:14:30,266 --> 00:14:33,066
+I think this is truly groundbreaking
+
+149
+00:14:34,000 --> 00:14:39,500
+When I rented the GPU on RunPod
+to make this video,
+
+150
+00:14:39,766 --> 00:14:43,500
+I thought even if it ended up being
+"I spent $10 and got nothing!"
+
+151
+00:14:43,866 --> 00:14:45,600
+that kind of result
+
+152
+00:14:45,866 --> 00:14:50,966
+would still make good content,
+which would be nice
+
+153
+00:14:51,600 --> 00:14:53,633
+But it worked more easily than expected
+
+154
+00:14:54,000 --> 00:14:58,233
+So I decided to emphasize the
+"under 500 yen" angle
+
+155
+00:14:58,933 --> 00:15:03,266
+I thought that was good content too, so it all worked out
+
+156
+00:15:03,800 --> 00:15:11,233
+Besides NVIDIA's model that I used,
+AI weather forecasting research is advancing worldwide
+
+157
+00:15:11,766 --> 00:15:13,166
+Google's GraphCast
+
+158
+00:15:13,833 --> 00:15:15,466
+Microsoft's Aurora
+
+159
+00:15:16,233 --> 00:15:18,100
+Huawei's Pangu-Weather
+
+160
+00:15:18,400 --> 00:15:22,733
+And ECMWF's AIFS
+
+161
+00:15:23,500 --> 00:15:29,833
+Not just major IT companies,
+but traditional meteorological agencies are also adopting AI
+
+162
+00:15:30,333 --> 00:15:38,033
+Also, rather than replacing everything with AI,
+various hybrid approaches are emerging
+
+163
+00:15:38,700 --> 00:15:41,733
+For example, in traditional numerical forecasting,
+
+164
+00:15:42,033 --> 00:15:45,833
+replacing only the computationally heavy parts with AI
+
+165
+00:15:46,566 --> 00:15:49,866
+or improving observation data accuracy with AI
+
+166
+00:15:50,600 --> 00:15:54,233
+or correcting numerical forecast results with AI
+
+167
+00:15:55,100 --> 00:16:01,666
+Research combining the best of both AI
+and traditional numerical forecasting is advancing in various directions
+
+168
+00:16:02,266 --> 00:16:06,833
+But as you all know, AI is not omnipotent
+
+169
+00:16:07,966 --> 00:16:13,100
+Large language models like ChatGPT
+sometimes tell plausible lies
+
+170
+00:16:13,600 --> 00:16:17,966
+Image generation AI draws people eating ramen with their bare hands
+
+171
+00:16:18,900 --> 00:16:23,633
+You're all well aware that AI does strange things
+
+172
+00:16:24,566 --> 00:16:28,800
+AI is very smart and useful, but not omnipotent
+
+173
+00:16:29,466 --> 00:16:31,966
+Weather forecasting AI is the same
+
+174
+00:16:33,033 --> 00:16:38,366
+That's why we need to think about how to incorporate AI technology into scientific research
+
+175
+00:16:38,933 --> 00:16:41,166
+Researchers and engineers around the world
+
+176
+00:16:41,633 --> 00:16:47,933
+and we who use the results of their research
+need to think about this
+
+177
+00:16:49,000 --> 00:16:58,000
+Weather forecasting AI is a particularly important example
+that's closely connected to our daily lives
+
+178
+00:16:58,700 --> 00:17:00,866
+Just one note at the end
+
+179
+00:17:01,833 --> 00:17:07,833
+In Japan, you need permission from the Japan Meteorological Agency
+to conduct weather forecasting as a business
+
+180
+00:17:08,500 --> 00:17:12,900
+It's fine if you're just trying it out for yourself like this time
+
+181
+00:17:13,366 --> 00:17:18,533
+But if you start a business using this,
+you might be violating the law
+
+182
+00:17:19,500 --> 00:17:23,400
+Please enjoy this only for research and learning purposes
+
+183
+00:17:26,500 --> 00:17:31,633
+Today I gave a brief explanation of numerical and AI weather forecasting
+
+184
+00:17:32,200 --> 00:17:36,800
+And actually ran an AI weather forecasting model
+
+185
+00:17:37,533 --> 00:17:40,500
+Weather forecasting that used to require supercomputers
+
+186
+00:17:41,033 --> 00:17:45,233
+can now be easily tried by anyone for less than 500 yen
+
+187
+00:17:46,233 --> 00:17:54,366
+Instead of going to Starbucks for coffee once,
+it might be fun to play with weather forecasting
+
+188
+00:17:55,033 --> 00:17:58,766
+See you in the next video, have a good day!

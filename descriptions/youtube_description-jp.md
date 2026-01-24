@@ -19,22 +19,25 @@
 🔔 この動画はこんな人におすすめ
 ・ 天気予報の仕組みに興味がある人
 ・ AIや機械学習の応用事例を知りたい人
+・ 天気予報をはじめとした科学研究へのAI活用に興味がある人
 ・ 数値計算やシミュレーションに興味がある人
-・ 最新の科学技術トピックを追いかけたい人
 
 🕐 チャプター
-00:00 | オープニング
-00:00 | 天気予報の仕組み：流体の微分方程式
-00:00 | 数値計算の基礎：ルンゲ・クッタ法
-00:00 | なぜ天気予報は大変なのか
-00:00 | 機械学習で物理を学ぶ
-00:00 | なぜ天気予報にAIなのか
-00:00 | AIモデルの速度と精度
-00:00 | AIとスーパーコンピュータの関係
-00:00 | FourCastNetを動かしてみた
-00:00 | 予測結果を見てみよう
-00:00 | 今後の展望と課題
-00:00 | エンディング
+00:00 | オープニング：ワンコインで天気予報!?
+00:42 | 天気予報ってどうやって作られている？
+02:30 | 数値計算の基礎：微分方程式を解く
+04:28 | なぜ天気予報にスパコンが必要なのか
+06:02 | 機械学習の基本的な考え方
+06:53 | 放物運動をAIに予測させてみた
+08:38 | AIモデルの特徴：学習と予測
+09:52 | AI天気予報の精度は？
+10:42 | AIとスーパーコンピュータの関係
+11:31 | FourCastNetを動かしてみた
+13:33 | 計算結果：ワンコインで成功！
+15:03 | 他のAI天気予報モデル紹介
+16:02 | AIの限界と今後の展望
+16:49 | 注意事項：気象業務法について
+17:26 | エンディング
 
 ⚠️ 注意事項
 日本では、天気予報を業務として行うには気象庁の許可が必要です（気象業務法）。
@@ -61,13 +64,12 @@ https://lit.link/samegiraffe
 ・ FourCastNet 3 (NVIDIA): https://developer.nvidia.com/blog/fourcastnet-3-enables-fast-and-accurate-large-ensemble-weather-forecasting-with-scalable-geometric-ml/
 ・ GraphCast (Google DeepMind): https://deepmind.google/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/
 ・ Aurora (Microsoft): https://www.microsoft.com/en-us/research/blog/introducing-aurora-the-first-large-scale-foundation-model-of-the-atmosphere/
-・ Pangu-Weather (Huawei): https://www.nature.com/articles/s41586-023-06185-3
-・ AIFS (ECMWF): https://www.ecmwf.int/en/about/media-centre/news/2024/aifs-new-machine-learning-model
+・ Pangu-Weather (Huawei): https://arxiv.org/abs/2211.02556
 ・ 気象庁：数値予報とは https://www.jma.go.jp/jma/kishou/know/whitep/1-3-1.html
 
 🛠️ 使用したサービス・データ
 ・ RunPod (クラウドGPU): https://www.runpod.io/
-・ GFS (気象データ): https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast
+・ Weather and climate resources (気象データ): https://www.noaa.gov/tools-and-resources/weather-and-climate-resources
 
 ℹ️ 特にクレジット表記のない画像・動画は、Wikimedia CommonsやPexels、Mixkitなどのフリー素材サイトより利用しています。
 

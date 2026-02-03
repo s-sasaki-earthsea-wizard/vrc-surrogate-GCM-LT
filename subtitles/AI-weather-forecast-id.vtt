@@ -1,0 +1,831 @@
+WEBVTT
+
+1
+00:00:00.033 --> 00:00:01.266
+Lihat ini!
+
+2
+00:00:01.533 --> 00:00:07.400
+Saya benar-benar menghitung prakiraan cuaca
+menggunakan model AI terbaru!
+
+3
+00:00:07.733 --> 00:00:12.133
+Dan prakiraan cuaca dengan AI bisa dihitung hanya dalam beberapa menit!
+
+4
+00:00:12.733 --> 00:00:18.666
+Dibandingkan dengan prakiraan numerik tradisional,
+ini jauh lebih cepat dan lebih murah!
+
+5
+00:00:19.133 --> 00:00:25.333
+Saya sendiri sudah mencobanya,
+dan biayanya hanya sekitar 500 yen!
+
+6
+00:00:25.466 --> 00:00:32.933
+Mengejutkan bahwa kita bisa membuat prakiraan cuaca
+lebih murah dari secangkir kopi di kafe atau paket McDonald's
+
+7
+00:00:33.466 --> 00:00:39.866
+Hari ini saya akan memperkenalkan ilmu prakiraan cuaca
+dan teknologi AI prakiraan cuaca terbaru
+
+8
+00:00:42.633 --> 00:00:48.266
+Apakah kalian tahu bagaimana prakiraan cuaca harian
+sebenarnya dibuat?
+
+9
+00:00:48.766 --> 00:00:52.633
+Sebenarnya itu memerlukan perhitungan yang sangat rumit
+
+10
+00:00:53.033 --> 00:01:02.466
+Seluruh atmosfer dan air bumi, aliran udara, suhu, tekanan,
+serta bagaimana awan dan uap air berubah
+
+11
+00:01:02.566 --> 00:01:06.066
+disimulasikan berdasarkan persamaan fisika
+
+12
+00:01:06.666 --> 00:01:16.300
+Menyelesaikan persamaan dinamika fluida dan termodinamika dalam skala global memerlukan perhitungan yang sangat kompleks dan rumit
+
+13
+00:01:16.833 --> 00:01:20.733
+Ketika mencoba menjalankan perhitungan ini di komputer,
+
+14
+00:01:20.733 --> 00:01:29.266
+dibutuhkan beberapa jam untuk menghasilkan prakiraan 10 hari menggunakan superkomputer yang terdiri dari ratusan mesin
+
+15
+00:01:29.833 --> 00:01:32.600
+Begitulah intensifnya perhitungan yang diperlukan
+
+16
+00:01:33.033 --> 00:01:37.866
+Hampir mustahil bagi perusahaan biasa atau individu untuk melakukan hal yang sama...
+
+17
+00:01:38.266 --> 00:01:40.266
+Itu cerita masa lalu
+
+18
+00:01:41.033 --> 00:01:49.600
+Seperti yang saya demonstrasikan, sekarang prakiraan cuaca bisa dilakukan dengan biaya sekitar secangkir kopi
+
+19
+00:01:50.500 --> 00:01:56.266
+Yang mengubah situasi secara drastis dalam beberapa tahun terakhir adalah perkembangan teknologi AI
+
+20
+00:01:57.100 --> 00:02:07.933
+Model AI untuk prakiraan cuaca telah muncul, dan prakiraan 10 hari bisa dihitung hanya dalam 1 menit dengan satu GPU berkinerja tinggi
+
+21
+00:02:08.866 --> 00:02:12.800
+Yang dulu membutuhkan ratusan mesin dan beberapa jam, sekarang hanya perlu satu GPU dan satu menit
+
+22
+00:02:13.700 --> 00:02:15.300
+Sangat cepat, bukan?
+
+23
+00:02:16.433 --> 00:02:23.033
+Dan kabar baiknya, beberapa model yang sudah dilatih ini
+tersedia untuk umum
+
+24
+00:02:23.433 --> 00:02:29.866
+Jika menyewa GPU berkinerja tinggi di cloud,
+bahkan individu bisa menjalankannya dengan mudah
+
+25
+00:02:30.500 --> 00:02:33.433
+Sebelum membahas prakiraan cuaca AI,
+
+26
+00:02:33.900 --> 00:02:37.433
+mari kita lihat lebih detail bagaimana prakiraan cuaca tradisional dibuat
+
+27
+00:02:37.733 --> 00:02:40.033
+Mari kita pelajari lebih lanjut
+
+28
+00:02:40.400 --> 00:02:46.333
+Udara bergerak, suhu berubah, uap air menjadi awan dan turun hujan
+
+29
+00:02:47.000 --> 00:02:51.500
+Fenomena-fenomena ini diketahui dapat dijelaskan dengan
+
+30
+00:02:52.066 --> 00:02:56.233
+berbagai persamaan diferensial termasuk dinamika fluida dan termodinamika
+
+31
+00:02:57.000 --> 00:03:01.766
+Anda mungkin berpikir "ya sudah, selesaikan saja persamaan-persamaan itu"
+
+32
+00:03:02.100 --> 00:03:08.633
+Sayangnya, persamaan-persamaan ini terlalu kompleks
+untuk diselesaikan dengan kertas dan pensil
+
+33
+00:03:09.300 --> 00:03:13.133
+Tidak seperti persamaan kuadrat yang dipelajari di SMA, tidak ada rumus
+
+34
+00:03:13.466 --> 00:03:17.900
+sehingga tidak bisa mendapat jawaban dalam bentuk "x sama dengan sekian"
+
+35
+00:03:18.533 --> 00:03:22.400
+Di sinilah metode numerik berperan
+
+36
+00:03:23.533 --> 00:03:27.733
+Mungkin lebih mudah dibayangkan sebagai simulasi
+
+37
+00:03:28.233 --> 00:03:35.566
+Dalam metode numerik, kita mengaproksimasi dengan
+menghubungkan titik-titik pada kurva dengan garis
+
+38
+00:03:36.033 --> 00:03:41.733
+Ini bukan jawaban yang tepat, tapi idenya adalah
+mendekati nilai yang benar sedekat mungkin
+
+39
+00:03:42.900 --> 00:03:48.033
+Mari saya jelaskan secara singkat apa yang dilakukan metode numerik
+
+40
+00:03:48.300 --> 00:03:50.500
+Pertama, tentukan titik awal
+
+41
+00:03:51.233 --> 00:03:55.633
+Misalkan ketika x sama dengan 0, f(x) sama dengan 1
+
+42
+00:03:56.366 --> 00:04:02.666
+Kemudian hitung nilai sedikit lebih jauh,
+ketika x sama dengan 0,1
+
+43
+00:04:03.000 --> 00:04:09.433
+Persamaan diferensial memberi tahu kita kemiringannya,
+jadi kita maju sedikit mengikuti kemiringan itu
+
+44
+00:04:10.000 --> 00:04:15.266
+Lalu hitung titik berikutnya, ketika x sama dengan 0,2
+
+45
+00:04:15.900 --> 00:04:20.900
+Dengan mengulang proses ini,
+bentuk fungsi perlahan-lahan terlihat
+
+46
+00:04:21.600 --> 00:04:28.266
+Salah satu metode langkah demi langkah ini
+disebut "metode Runge-Kutta"
+
+47
+00:04:28.666 --> 00:04:32.533
+Pertanyaan penting di sini adalah "seberapa halus pembagian langkahnya?"
+
+48
+00:04:34.200 --> 00:04:37.866
+Dalam contoh tadi, kita menghitung dengan interval 0,1
+
+49
+00:04:38.300 --> 00:04:46.700
+Jika ingin presisi lebih tinggi,
+perlu membuat interval lebih kecil: 0,01, 0,001, dan seterusnya
+
+50
+00:04:47.166 --> 00:04:53.466
+Tapi jika langkah diperkecil 10 kali lipat,
+jumlah perhitungan meningkat 10 kali lipat
+
+51
+00:04:54.000 --> 00:05:00.300
+Masalah pentingnya adalah semakin halus pembagian,
+biaya komputasi meledak
+
+52
+00:05:01.100 --> 00:05:05.333
+Prakiraan cuaca memerlukan simulasi seluruh bumi
+
+53
+00:05:05.900 --> 00:05:10.033
+Contoh tadi satu dimensi, tapi atmosfer nyata tiga dimensi
+
+54
+00:05:10.833 --> 00:05:16.000
+Ruang membentang ke arah timur-barat, utara-selatan, dan ketinggian
+
+55
+00:05:16.500 --> 00:05:18.100
+Ditambah lagi dimensi waktu
+
+56
+00:05:19.033 --> 00:05:25.933
+Misalnya, membagi bumi menjadi grid 25x25 km
+menghasilkan sekitar 1 juta titik
+
+57
+00:05:26.366 --> 00:05:29.500
+Ditambah puluhan lapisan ke arah ketinggian
+
+58
+00:05:30.000 --> 00:05:34.900
+Dan waktu juga dibagi halus dan dimajukan langkah demi langkah
+
+59
+00:05:35.300 --> 00:05:44.700
+Jadi 100 perhitungan dalam satu dimensi
+meledak secara eksponensial dalam tiga dimensi plus waktu
+
+60
+00:05:45.366 --> 00:05:49.800
+Pada titik ini, komputer biasa sudah tidak mampu menanganinya
+
+61
+00:05:50.600 --> 00:05:55.366
+Inilah mengapa prakiraan cuaca memerlukan superkomputer
+
+62
+00:05:56.266 --> 00:06:01.633
+Itulah mengapa prakiraan cuaca mutakhir
+menjadi proyek skala nasional
+
+63
+00:06:02.633 --> 00:06:10.433
+Tapi kemudian muncul topik utama hari ini:
+pendekatan yang sama sekali baru menggunakan AI
+
+64
+00:06:10.900 --> 00:06:15.133
+Secara garis besar, inilah yang dilakukan machine learning
+
+65
+00:06:15.733 --> 00:06:18.233
+Pertama, siapkan data dalam jumlah besar
+
+66
+00:06:18.800 --> 00:06:23.866
+Gunakan data itu untuk memprediksi output apa yang akan keluar dari input
+
+67
+00:06:24.400 --> 00:06:32.266
+Hitung seberapa jauh prediksi berbeda dari jawaban yang benar,
+dan sesuaikan model untuk mengurangi perbedaan itu
+
+68
+00:06:32.733 --> 00:06:39.366
+Dengan mengulang ini berkali-kali,
+prediksi secara bertahap mendekati jawaban yang benar
+
+69
+00:06:39.733 --> 00:06:49.066
+Alih-alih manusia mengatakan "hitung dengan aturan ini",
+mesin menemukan pola sendiri dari data
+
+70
+00:06:49.533 --> 00:06:53.833
+Ini adalah konsep dasar machine learning
+
+71
+00:06:53.966 --> 00:06:56.500
+Mari lihat contoh yang sangat sederhana
+
+72
+00:06:56.833 --> 00:07:02.666
+Saya membuat model AI untuk memprediksi
+lintasan parabola bola yang dilempar
+
+73
+00:07:03.100 --> 00:07:08.900
+Data pelatihannya adalah lintasan
+dari berbagai kecepatan awal dan sudut
+
+74
+00:07:09.433 --> 00:07:13.233
+Ini hanya dihasilkan dari perhitungan fungsi kuadrat
+
+75
+00:07:13.733 --> 00:07:16.033
+Ketika model dilatih dengan data ini,
+
+76
+00:07:16.833 --> 00:07:23.033
+model bisa memprediksi lintasan
+hanya dengan memasukkan kecepatan awal dan sudut lemparan
+
+77
+00:07:24.000 --> 00:07:26.500
+Ini hasil dari menjalankannya secara nyata
+
+78
+00:07:27.300 --> 00:07:31.466
+Cukup akurat memprediksi gerak parabola, kan?
+
+79
+00:07:32.133 --> 00:07:36.500
+Yang menarik adalah model ini tidak tahu persamaan kuadrat
+
+80
+00:07:37.500 --> 00:07:43.000
+Tapi dengan melihat banyak data tentang
+"dilempar begini, terbang begitu"
+
+81
+00:07:43.333 --> 00:07:48.200
+model mempelajari polanya
+dan bisa memprediksi lintasan yang akurat
+
+82
+00:07:49.000 --> 00:07:54.000
+Ini mirip saat kita melempar sampah ke tempat sampah
+
+83
+00:07:54.400 --> 00:07:57.933
+Tanpa memikirkan rumus fisika, dari pengalaman
+
+84
+00:07:58.400 --> 00:08:03.533
+kita tahu "dengan tenaga segini dan sudut segini, pasti masuk"
+
+85
+00:08:04.333 --> 00:08:09.733
+Meski ini tidak sopan, jadi tolong
+buang sampah dengan benar tanpa melemparnya
+
+86
+00:08:10.833 --> 00:08:12.566
+Tapi jujur saja,
+
+87
+00:08:12.933 --> 00:08:19.566
+menggunakan machine learning untuk memprediksi
+gerak parabola, terus terang, tidak ada untungnya
+
+88
+00:08:20.600 --> 00:08:25.100
+Karena bisa langsung dapat jawabannya dengan menyelesaikan persamaan kuadrat
+
+89
+00:08:26.366 --> 00:08:31.700
+Tapi contoh sederhana membuat model AI memprediksi gerak parabola ini
+
+90
+00:08:32.200 --> 00:08:37.633
+mengarah pada prediksi fenomena fisika yang kompleks
+seperti prakiraan cuaca
+
+91
+00:08:38.466 --> 00:08:44.533
+Ciri khas model machine learning adalah biaya pelatihan dan prediksi sangat berbeda
+
+92
+00:08:45.400 --> 00:08:51.700
+Pelatihan, yaitu tahap mempelajari pola dari data,
+memang intensif
+
+93
+00:08:52.633 --> 00:09:01.133
+Membaca data observasi meteorologi dan prakiraan numerik selama puluhan tahun,
+melatih ribuan, puluhan ribu kali
+
+94
+00:09:01.766 --> 00:09:07.700
+Tapi begitu pelatihan selesai dan model dibangun,
+prediksi hampir seketika
+
+95
+00:09:08.333 --> 00:09:16.266
+Masukkan kondisi atmosfer saat ini,
+dan berdasarkan pola yang dipelajari, keluar kondisi 6 jam kemudian
+
+96
+00:09:17.033 --> 00:09:24.366
+Tidak perlu maju sedikit, hitung lagi,
+dan mengakumulasi langkah-langkah kecil seperti metode numerik
+
+97
+00:09:25.200 --> 00:09:29.600
+Metode tradisional menghitung dari nol setiap kali
+
+98
+00:09:30.200 --> 00:09:36.300
+Susun persamaan fisika, lakukan perhitungan numerik,
+akumulasi langkah demi langkah secara bertahap
+
+99
+00:09:36.800 --> 00:09:42.133
+Model AI seperti sudah mengerjakan banyak soal ujian lama
+dan memahami polanya
+
+100
+00:09:42.766 --> 00:09:45.600
+Untuk ujian, daripada menghafal prinsip detail,
+
+101
+00:09:45.933 --> 00:09:51.400
+menghafal cara menyelesaikan soal-soal lama
+memang metode yang efektif
+
+102
+00:09:52.033 --> 00:09:59.400
+"Oke cepat, tapi bagaimana akurasinya?"
+Ini pertanyaan yang wajar muncul
+
+103
+00:10:00.133 --> 00:10:05.100
+Sebenarnya model AI terbaru mencapai akurasi setara dengan prakiraan numerik tradisional
+
+104
+00:10:05.700 --> 00:10:09.700
+dan dalam beberapa kasus, bahkan lebih baik
+
+105
+00:10:10.433 --> 00:10:14.133
+Misalnya, Badai Lee tahun 2023
+
+106
+00:10:14.633 --> 00:10:23.200
+Badai besar yang terbentuk di Atlantik dan
+menyebabkan kerusakan signifikan di pantai Atlantik AS dan Kanada
+
+107
+00:10:23.666 --> 00:10:26.400
+Di mana badai ini akan mendarat?
+
+108
+00:10:27.233 --> 00:10:33.566
+Model AI yang dikembangkan Google DeepMind
+memprediksinya dengan akurat 9 hari sebelumnya
+
+109
+00:10:34.333 --> 00:10:42.066
+Prakiraan tradisional baru bisa yakin 6 hari sebelumnya,
+jadi peringatan bisa dikeluarkan 3 hari lebih awal
+
+110
+00:10:42.866 --> 00:10:48.133
+"Jika AI secepat ini, apakah superkomputer masih diperlukan?"
+
+111
+00:10:48.533 --> 00:10:52.400
+Beberapa orang mungkin berpikir begitu,
+tapi sebenarnya tidak demikian
+
+112
+00:10:53.133 --> 00:10:55.700
+Data yang digunakan model AI untuk belajar,
+
+113
+00:10:56.333 --> 00:10:58.500
+dari mana asalnya?
+
+114
+00:10:59.333 --> 00:11:02.500
+Dari prakiraan cuaca numerik tradisional
+
+115
+00:11:03.233 --> 00:11:05.833
+Mengumpulkan data observasi meteorologi dari seluruh dunia,
+
+116
+00:11:06.366 --> 00:11:09.633
+simulasi fisika yang dihitung oleh superkomputer,
+
+117
+00:11:10.100 --> 00:11:16.300
+model AI belajar dari data yang merekonstruksi
+bagaimana kondisi atmosfer di masa lalu
+
+118
+00:11:17.233 --> 00:11:25.433
+Dengan kata lain, model AI tidak menggantikan simulasi fisika,
+tapi belajar dari hasilnya
+
+119
+00:11:26.000 --> 00:11:31.066
+Model AI saja tidak bisa menghasilkan prakiraan cuaca yang sangat akurat
+
+120
+00:11:31.633 --> 00:11:37.100
+Sejauh ini saya sudah menjelaskan cara kerja prakiraan cuaca dengan AI
+
+121
+00:11:37.733 --> 00:11:43.966
+Tapi kalau tidak mencoba sendiri,
+sulit untuk benar-benar percaya, kan?
+
+122
+00:11:44.533 --> 00:11:47.133
+Jadi, mari kita coba!
+
+123
+00:11:47.733 --> 00:11:55.466
+Kali ini saya menggunakan FourCastNet,
+model AI prakiraan cuaca yang dirilis oleh NVIDIA
+
+124
+00:11:56.133 --> 00:12:02.666
+Model yang sudah dilatih tersedia gratis,
+dan siapa pun bisa mengunduh dan menggunakannya
+
+125
+00:12:03.366 --> 00:12:07.533
+Namun, diperlukan GPU berkinerja tinggi untuk menjalankannya
+
+126
+00:12:08.400 --> 00:12:12.500
+GPU di PC biasa agak kurang kuat
+
+127
+00:12:12.833 --> 00:12:19.766
+Jadi kali ini saya menyewa GPU cloud
+per jam dari layanan bernama RunPod
+
+128
+00:12:20.300 --> 00:12:23.766
+Saya menyewa GPU A100
+
+129
+00:12:24.466 --> 00:12:28.433
+Biaya per jam sekitar 1,5 dolar
+
+130
+00:12:28.933 --> 00:12:32.400
+Sekitar 235 yen dalam mata uang Jepang
+
+131
+00:12:33.300 --> 00:12:38.600
+Menggunakan GPU H100 terbaru akan lebih cepat,
+
+132
+00:12:39.200 --> 00:12:46.800
+tapi itu 2,7 dolar per jam,
+jadi mempertimbangkan keseimbangan biaya, saya memilih A100
+
+133
+00:12:47.333 --> 00:12:55.000
+Untuk input, saya menggunakan data observasi meteorologi global
+yang dipublikasikan gratis oleh NOAA, badan cuaca AS
+
+134
+00:12:55.300 --> 00:13:04.200
+Saya mengunduh data aktual 1 Januari 2025 pukul 00:00 UTC
+dan menggunakannya sebagai data input
+
+135
+00:13:04.933 --> 00:13:12.700
+Dari sana, saya memutuskan untuk memprediksi 60 jam ke depan,
+sampai pukul 12:00 tanggal 3 Januari, dengan interval 6 jam
+
+136
+00:13:13.500 --> 00:13:18.833
+Inferensi untuk prakiraan cuaca 3 hari
+memakan waktu sekitar 35 menit
+
+137
+00:13:19.433 --> 00:13:27.400
+Termasuk pengaturan lingkungan, mengunduh data meteorologi, dan memuat model, total biaya sekitar 3 dolar
+
+138
+00:13:28.000 --> 00:13:29.333
+Kurang dari 500 yen
+
+139
+00:13:29.966 --> 00:13:32.700
+Prakiraan cuaca dengan biaya kurang dari satu koin!
+
+140
+00:13:33.766 --> 00:13:39.466
+Mari lihat hasilnya
+Ini cuaca yang diprediksi oleh AI
+
+141
+00:13:40.233 --> 00:13:51.233
+Suhu permukaan, kecepatan angin, tekanan permukaan laut, distribusi tekanan atmosfer atas,
+bisa memprediksi bagaimana berbagai elemen meteorologi berubah setiap 6 jam
+
+142
+00:13:51.833 --> 00:13:56.366
+Perhitungan seperti ini sekarang bisa dilakukan dengan anggaran pribadi,
+kurang dari 500 yen
+
+143
+00:13:56.833 --> 00:13:59.966
+Ini tidak terbayangkan hanya 5 tahun lalu
+
+144
+00:14:00.266 --> 00:14:10.233
+Namun, kali ini saya tidak memverifikasi secara ketat
+apakah prediksinya cocok dengan cuaca aktual 1-3 Januari 2025
+
+145
+00:14:11.300 --> 00:14:17.733
+Anggap saja ini demonstrasi
+menjalankan model AI dan mendapatkan hasil prediksi
+
+146
+00:14:18.333 --> 00:14:26.033
+Meski begitu, apa yang beberapa tahun lalu memerlukan
+sumber daya komputasi proyek nasional dengan superkomputer,
+
+147
+00:14:26.466 --> 00:14:29.733
+sekarang bisa dilakukan dengan biaya secangkir kopi
+
+148
+00:14:30.266 --> 00:14:33.066
+Saya pikir ini benar-benar revolusioner
+
+149
+00:14:34.000 --> 00:14:39.500
+Ketika saya menyewa GPU di RunPod
+untuk membuat video ini,
+
+150
+00:14:39.766 --> 00:14:43.500
+saya pikir bahkan jika hasilnya
+"Habis 10 dolar dan tidak dapat apa-apa!"
+
+151
+00:14:43.866 --> 00:14:45.600
+hasil seperti itu
+
+152
+00:14:45.866 --> 00:14:50.966
+juga akan jadi konten yang bagus,
+yang juga oke
+
+153
+00:14:51.600 --> 00:14:53.633
+Tapi ternyata lebih mudah dari yang diharapkan
+
+154
+00:14:54.000 --> 00:14:58.233
+Jadi saya memutuskan untuk menekankan
+"kurang dari 500 yen"
+
+155
+00:14:58.933 --> 00:15:03.266
+Itu juga konten yang bagus, jadi semuanya berjalan baik
+
+156
+00:15:03.800 --> 00:15:11.233
+Selain model NVIDIA yang saya gunakan,
+penelitian prakiraan cuaca AI sedang berkembang di seluruh dunia
+
+157
+00:15:11.766 --> 00:15:13.166
+GraphCast dari Google
+
+158
+00:15:13.833 --> 00:15:15.466
+Aurora dari Microsoft
+
+159
+00:15:16.233 --> 00:15:18.100
+Pangu-Weather dari Huawei
+
+160
+00:15:18.400 --> 00:15:22.733
+Dan AIFS dari Pusat Prakiraan Cuaca Jangka Menengah Eropa
+
+161
+00:15:23.500 --> 00:15:29.833
+Tidak hanya perusahaan IT besar,
+tapi lembaga meteorologi tradisional juga mulai mengadopsi AI
+
+162
+00:15:30.333 --> 00:15:38.033
+Juga, alih-alih mengganti semuanya dengan AI,
+berbagai pendekatan hibrida bermunculan
+
+163
+00:15:38.700 --> 00:15:41.733
+Misalnya, dalam prakiraan numerik tradisional,
+
+164
+00:15:42.033 --> 00:15:45.833
+mengganti hanya bagian yang komputasinya berat dengan AI
+
+165
+00:15:46.566 --> 00:15:49.866
+atau meningkatkan akurasi data observasi dengan AI
+
+166
+00:15:50.600 --> 00:15:54.233
+atau mengoreksi hasil prakiraan numerik dengan AI
+
+167
+00:15:55.100 --> 00:16:01.666
+Penelitian yang menggabungkan yang terbaik dari AI
+dan prakiraan numerik tradisional berkembang ke berbagai arah
+
+168
+00:16:02.266 --> 00:16:06.833
+Tapi seperti yang kalian tahu, AI tidak mahakuasa
+
+169
+00:16:07.966 --> 00:16:13.100
+Model bahasa besar seperti ChatGPT
+kadang berbicara kebohongan yang masuk akal
+
+170
+00:16:13.600 --> 00:16:17.966
+AI pembuat gambar menggambar orang makan ramen dengan tangan kosong
+
+171
+00:16:18.900 --> 00:16:23.633
+Kalian pasti tahu bahwa AI melakukan hal-hal aneh
+
+172
+00:16:24.566 --> 00:16:28.800
+AI sangat pintar dan berguna tapi tidak mahakuasa
+
+173
+00:16:29.466 --> 00:16:31.966
+AI prakiraan cuaca juga sama
+
+174
+00:16:33.033 --> 00:16:38.366
+Itulah mengapa kita perlu memikirkan bagaimana mengintegrasikan teknologi AI ke dalam penelitian ilmiah
+
+175
+00:16:38.933 --> 00:16:41.166
+Peneliti dan insinyur di seluruh dunia,
+
+176
+00:16:41.633 --> 00:16:47.933
+serta kita yang menggunakan hasil penelitian mereka,
+perlu memikirkan hal ini
+
+177
+00:16:49.000 --> 00:16:58.000
+AI prakiraan cuaca adalah contoh yang sangat penting
+yang terkait erat dengan kehidupan sehari-hari kita
+
+178
+00:16:58.700 --> 00:17:00.866
+Satu catatan di akhir
+
+179
+00:17:01.833 --> 00:17:07.833
+Di Jepang, untuk melakukan prakiraan cuaca sebagai bisnis
+diperlukan izin dari Badan Meteorologi Jepang
+
+180
+00:17:08.500 --> 00:17:12.900
+Kalau hanya mencoba sendiri seperti kali ini, tidak masalah
+
+181
+00:17:13.366 --> 00:17:18.533
+Tapi kalau memulai bisnis dengan ini,
+mungkin melanggar hukum
+
+182
+00:17:19.500 --> 00:17:23.400
+Silakan nikmati ini hanya untuk tujuan penelitian dan pembelajaran
+
+183
+00:17:26.500 --> 00:17:31.633
+Hari ini saya memberikan penjelasan singkat tentang prakiraan cuaca numerik dan AI
+
+184
+00:17:32.200 --> 00:17:36.800
+Dan benar-benar menjalankan model AI prakiraan cuaca
+
+185
+00:17:37.533 --> 00:17:40.500
+Prakiraan cuaca yang dulu memerlukan superkomputer,
+
+186
+00:17:41.033 --> 00:17:45.233
+sekarang bisa dicoba siapa saja dengan mudah dengan kurang dari 500 yen
+
+187
+00:17:46.233 --> 00:17:54.366
+Daripada pergi ke kafe untuk minum kopi sekali,
+mungkin menyenangkan bermain dengan prakiraan cuaca
+
+188
+00:17:55.033 --> 00:17:58.766
+Sampai jumpa di video berikutnya, salam sejahtera!
